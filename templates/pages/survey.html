@@ -1,0 +1,130 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <!-- DataTables -->
+    <link href="{% static 'libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- Responsive datatable examples -->
+    <link href="{% static 'libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />    
+{% endblock %}
+{% block contents %}
+
+
+
+<div class="mb-3 row d-flex flex-wrap gap-2">
+    <label for="month-input" class="col-md-3 col-form-label">Filter Data</label>
+    <div class="col-md-2">
+            <input class="date-filter form-control" name="dateFilter" type="month" value="2022-03">
+    </div>
+
+    <div class="col-md-2">
+        <select class="form-select" name="payment-status" id="status-dropdown">
+            <option value="all">All</option>
+            <option value="C">Iskandar Puteri</option>
+            <option value="N">Kangkar Pulai</option>
+            <option value="F">Lima Kedai</option>
+            <option value="F">Skudai</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <select class="form-select" name="payment-status" id="status-dropdown">
+            <option value="all">All</option>
+            <option value="C">Male</option>
+            <option value="N">Female</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <select class="form-select" name="payment-status" id="status-dropdown">
+            <option value="all">All</option>
+            <option value="C">>20</option>
+            <option value="C">>30</option>
+            <option value="C">>40</option>
+            <option value="C">>50</option>
+            <option value="C">>60</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <button type="submit" value="Submit" name="date_filter_button" class="btn btn-danger waves-effect waves-light">Filter</button>
+    </div>
+</div>
+
+                        
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
+                    <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Score</th>
+                        <th>Age</th>
+                        <th>City</th>
+                        <th>State</th>
+                    </tr>
+                    </thead>
+
+
+                    <tbody>
+                    <tr>
+                        <td>2008/11/28</td>
+                        <td>Tiger Nixon</td>
+                        <td>Male</td>
+                        <td>90</td>
+                        <td>61</td>
+                        <td>Skudai</td>
+                        <td>Johor</td>
+                    </tr>
+                    <tr>
+                        <td>2008/11/28</td>
+                        <td>Garrett Winters</td>
+                        <td>Female</td>
+                        <td>82</td>
+                        <td>63</td>
+                        <td>Skudai</td>
+                        <td>Johor</td>
+                    </tr>
+                    <tr>
+                        <td>2008/11/28</td>
+                        <td>Ashton Cox</td>
+                        <td>Male</td>
+                        <td>87</td>
+                        <td>66</td>
+                        <td>Skudai</td>
+                        <td>Johor</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+{% endblock %}
+
+
+{% block extra_javascript %}
+        <!-- Required datatable js -->
+        <script src="{% static 'libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+        <script src="{% static 'libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+        <!-- Buttons examples -->
+        <script src="{% static 'libs/datatables.net-buttons/js/dataTables.buttons.min.js' %}"></script>
+        <script src="{% static 'libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js' %}"></script>
+        <script src="{% static 'libs/jszip/dist/jszip.min.js' %}"></script>
+        <script src="{% static 'libs/pdfmake/build/pdfmake.min.js' %}"></script>
+        <script src="{% static 'libs/pdfmake/build/vfs_fonts.js' %}"></script>
+        <script src="{% static 'libs/datatables.net-buttons/js/buttons.html5.min.js' %}"></script>
+        <script src="{% static 'libs/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
+        <script src="{% static 'libs/datatables.net-buttons/js/buttons.colVis.min.js' %}"></script>
+        
+        <!-- Responsive examples -->
+        <script src="{% static 'libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+        <script src="{% static 'libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
+
+        <!-- Datatable init js -->
+        <script src="{% static 'js/pages/datatables.init.js' %}"></script>    
+{% endblock %}

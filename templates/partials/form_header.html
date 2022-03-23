@@ -1,0 +1,42 @@
+{% load static %}
+{% block header%}
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="{% url 'survey-form' %}" class="logo logo-dark">
+                            <span class="logo-sm">
+                                <img src="{% static 'images/logo.svg' %}" alt="" height="32">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="{% static 'images/logo.png' %}" alt="" height="64">
+                            </span>
+                        </a>
+
+                        <a href="{% url 'survey-form' %}" class="logo logo-light">
+                            <span class="logo-sm">
+                                <img src="{% static 'images/logo.svg' %}" alt="" height="32">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="{% static 'images/logo.png' %}" alt="" height="64">
+                            </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="d-flex">
+                    <div clacalendar-full.htmls="dropdown d-inline-block">
+                        <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                            <i class="bx bx-cog bx-spin"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+{% endblock %}

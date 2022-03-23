@@ -1,0 +1,85 @@
+{% extends 'partials/base.html' %}
+{% load static %} 
+{% block contents %}
+        {% for message in messages %}
+        <input type="hidden" id="login-msg" value="{{message}}">
+        {% endfor %}
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="d-flex">
+                                    <div class="flex-grow-1 align-self-center">
+                                        <div class="text-muted">
+                                            <p class="mb-2">Welcome to IPSOS Dashboard</p>
+                                            <h5 class="mb-1">{{user.username}}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 align-self-center">
+                                <div class="text-lg-center mt-4 mt-lg-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div>
+                                                <p class="text-muted text-truncate mb-2">Number of Survey {% now "jS F Y" %}</p>
+                                                <h5 class="mb-0">48</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 d-none d-lg-block">
+                                <div class="clearfix mt-4 mt-lg-0">
+                                    <div class="dropdown float-end">
+                                        <a href="{% url 'survey' %}">
+                                            <button class="btn btn-primary" type="button" >
+                                                <i class="bx bx-spin bx-analyse align-middle me-1"></i> View All Survey
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">SATISFIED WITH LOCAL COUNCIL</h4>
+                        <div id="mix-line-bar" class="e-charts"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+        <div>
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">Pie Chart</h4>
+                        <div id="pie-chart" class="e-charts"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
+
+{% block extra_javascript %}
+        <!-- echarts js -->
+        <script src="{% static 'libs/echarts/dist/echarts.min.js' %}"></script>
+        <!-- echarts init -->
+        <script src="{% static 'js/pages/dashboard_echarts.init.js' %}"></script>
+        
+{% endblock %}

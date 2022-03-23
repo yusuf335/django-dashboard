@@ -1,0 +1,12 @@
+.env
+venv/
+.idea/
+*.pyc
+__pycache__/
+uploads/
+
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
