@@ -1,0 +1,1 @@
+web: gunicorn ipsos.wsgi --log-file -
